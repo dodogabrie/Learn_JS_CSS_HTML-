@@ -43,14 +43,15 @@ function update() {
   const actives = document.querySelectorAll('.active')
   const perc = ((actives.length-1) / (circles.length-1 ))
   progress.style.width = perc*100 + '%'
+  prev.disabled = false
+  next.disabled = false
   if(currentActive === 1) {
     prev.disabled = true
     next.disabled = false
-  } else if(currentActive === circles.length) {
+  } 
+  if(currentActive === circles.length) {
     next.disabled = true
     prev.disabled = false
-  } else {
-    prev.disabled = false
-    next.disables = false
   }
+  console.log(currentActive)
 }
